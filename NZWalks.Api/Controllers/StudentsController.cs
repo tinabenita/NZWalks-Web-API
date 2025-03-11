@@ -8,6 +8,8 @@ namespace NZWalks.Api.Controllers
     public class StudentsController : ControllerBase
     {
 
+        
+
         // GET: api/Students
         [HttpGet]
         public IActionResult GetAllStudents()
