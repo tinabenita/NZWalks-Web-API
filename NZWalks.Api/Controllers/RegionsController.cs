@@ -10,7 +10,7 @@ namespace NZWalks.Api.Controllers
     {
         private readonly NZWalksDbContext dbContext;
 
-        public RegionsController(NZWalksDbContext dbContext) 
+        public RegionsController(NZWalksDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
@@ -19,7 +19,7 @@ namespace NZWalks.Api.Controllers
         public IActionResult GetAll()
         {
             var regions = dbContext.Regions.ToList();
-            
+
             return Ok(regions);
         }
 
@@ -29,9 +29,12 @@ namespace NZWalks.Api.Controllers
         {
             //var region = dbContext.Regions.Find(id); //Takes only the primary key
             var region = dbContext.Regions.FirstOrDefault(x => x.Id == id); //Can use with other properties
-            if (region== null) {
+            if (region == null)
+            {
                 return NotFound();
             }
             return Ok(region);
         }
+    }
+
 }
